@@ -5,22 +5,35 @@ import java.util.ArrayList;
 public class Region {
     private RegionCenter regionCenter;
     private ArrayList<District> districts;
+    private double square;
+
+    private void calculateSquare(){
+        for(District district : districts){
+            for(City city : district.getCities()){
+                square += city.getSquare();
+            }
+            square += district.getSquare();
+        }
+    }
 
     public Region(){
         regionCenter = new RegionCenter(this);
         districts = new ArrayList<>();
         districts.add(new District());
+        calculateSquare();
     }
 
     public Region(RegionCenter regionCenter){
         this.regionCenter = regionCenter;
         districts = new ArrayList<>();
         districts.add(new District());
+        calculateSquare();
     }
 
     public Region(RegionCenter regionCenter, ArrayList<District> districts) {
         this.regionCenter = regionCenter;
         this.districts = districts;
+        calculateSquare();
     }
 
     public RegionCenter getRegionCenter() {
@@ -37,5 +50,9 @@ public class Region {
 
     public void setDistricts(ArrayList<District> districts) {
         this.districts = districts;
+    }
+
+    public double getSquare() {
+        return square;
     }
 }
