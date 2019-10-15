@@ -1,12 +1,35 @@
 package com.yuditsky.aggregation_and_composition.task2.entity;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Text {
     private ArrayList<Sentence> sentences;
     private String title;
 
     public Text() {
+    }
+
+    @Override
+    public String toString() {
+        return "Text{" +
+                "sentences=" + sentences +
+                ", title='" + title + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Text text = (Text) o;
+        return sentences.equals(text.sentences) &&
+                title.equals(text.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sentences, title);
     }
 
     public Text(ArrayList<Sentence> sentences, String title) {
