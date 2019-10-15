@@ -1,6 +1,7 @@
 package com.yuditsky.aggregation_and_composition.task2.entity;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Text {
@@ -37,7 +38,7 @@ public class Text {
         this.title = title;
     }
 
-    public ArrayList<Sentence> getSentences() {
+    public List<Sentence> getSentences() {
         return sentences;
     }
 

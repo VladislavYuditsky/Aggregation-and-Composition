@@ -1,6 +1,7 @@
 package com.yuditsky.aggregation_and_composition.task2.entity;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Sentence {
@@ -13,7 +14,7 @@ public class Sentence {
         this.words = new ArrayList<>(words);
     }
 
-    public ArrayList<Word> getWords() {
+    public List<Word> getWords() {
         return words;
     }
 
