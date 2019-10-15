@@ -33,7 +33,7 @@ public class Main {
                 + desiredVoucher.getType() + ", transport: " + desiredVoucher.getTransport()
                 + ", feed: " + desiredVoucher.getFeed());
 
-        System.out.println("Is avaible: " + AgencyLogic.isAvaible(agency, desiredVoucher));
+        System.out.println("Is avaible: " + AgencyLogic.isAvailable(agency, desiredVoucher));
 
         System.out.println("Sort by days");
         for(Voucher voucher : AgencyLogic.sortByDays(agency)) {

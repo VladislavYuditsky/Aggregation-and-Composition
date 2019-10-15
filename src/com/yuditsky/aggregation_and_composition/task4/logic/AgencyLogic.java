@@ -9,7 +9,7 @@ import java.util.List;
 
 public class AgencyLogic {
 
-    public static boolean isAvaible(Agency agency, Voucher desiredVoucher){
+    public static boolean isAvailable(Agency agency, Voucher desiredVoucher){
         for(Voucher voucher : agency.getVouchers()){
             if(voucher == desiredVoucher){
                 return true;
@@ -19,7 +19,7 @@ public class AgencyLogic {
     }
 
     public void toBook(Agency agency, Voucher desiredVoucher){
-        if(isAvaible(agency, desiredVoucher)){
+        if(isAvailable(agency, desiredVoucher)){
             agency.getVouchers().remove(desiredVoucher);
         }
     }
