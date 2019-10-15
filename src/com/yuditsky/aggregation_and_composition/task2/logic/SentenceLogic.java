@@ -5,10 +5,10 @@ import com.yuditsky.aggregation_and_composition.task2.entity.Word;
 
 public class SentenceLogic {
 
-    public static String convert(Sentence sentence){
+    public static String convert(Sentence sentence) {
         String buffer = new String();
 
-        for(Word word : sentence.getWords()){
+        for (Word word : sentence.getWords()) {
             buffer += word.getWord();
             buffer += " ";
         }

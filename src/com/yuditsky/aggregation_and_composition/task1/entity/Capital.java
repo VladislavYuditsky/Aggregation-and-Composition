@@ -3,7 +3,7 @@ package com.yuditsky.aggregation_and_composition.task1.entity;
 public class Capital extends RegionCenter {
     private State state;
 
-    public Capital(){
+    public Capital() {
         state = new State(this);
     }
 

@@ -7,15 +7,15 @@ public class District {
     private ArrayList<City> cities;
     private double square;
 
-    public District(DistrictCenter districtCenter){
+    public District(DistrictCenter districtCenter) {
         this.districtCenter = districtCenter;
         cities = new ArrayList<>();
         cities.add(districtCenter);
     }
 
-    public District(){
+    public District() {
         districtCenter = new DistrictCenter(this);
-        cities = new ArrayList<> ();
+        cities = new ArrayList<>();
         cities.add(districtCenter);
     }
 
@@ -25,13 +25,13 @@ public class District {
         this.square = square;
     }
 
-    public District(String name, double square){
+    public District(String name, double square) {
         this();
         districtCenter.setName(name);
         this.square = square;
     }
 
-    public District(String name){
+    public District(String name) {
         this();
         districtCenter.setName(name);
     }

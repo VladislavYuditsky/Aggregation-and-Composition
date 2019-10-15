@@ -9,16 +9,16 @@ public class City {
         this.square = square;
     }
 
-    public City(String name){
+    public City(String name) {
         this.name = name;
     }
 
-    public City(double square){
+    public City(double square) {
         this();
         this.square = square;
     }
 
-    public City(){
+    public City() {
         name = "noname";
     }
 

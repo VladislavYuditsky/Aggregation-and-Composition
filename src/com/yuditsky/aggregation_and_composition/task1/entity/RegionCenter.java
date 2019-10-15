@@ -7,7 +7,7 @@ public class RegionCenter extends DistrictCenter {
         this.region = region;
     }
 
-    public RegionCenter(){
+    public RegionCenter() {
         region = new Region(this);
     }
 

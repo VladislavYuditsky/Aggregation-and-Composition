@@ -38,7 +38,7 @@ public class Voucher {
         this.feed = feed;
     }
 
-    public enum Type{
+    public enum Type {
         REST,
         EXCURSION,
         TREATMENT,
@@ -46,14 +46,14 @@ public class Voucher {
         CRUISE;
     }
 
-    public enum Transport{
+    public enum Transport {
         AIRPLANE,
         SHIP,
         TRAIN,
         BUS;
     }
 
-    public enum Feed{
+    public enum Feed {
         RO,
         BB,
         HB,
@@ -62,7 +62,8 @@ public class Voucher {
         UAI;
     }
 
-    public Voucher() {}
+    public Voucher() {
+    }
 
     public Voucher(Type type, int days, Transport transport, Feed feed) {
         this.type = type;

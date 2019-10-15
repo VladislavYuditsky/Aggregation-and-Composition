@@ -7,23 +7,23 @@ public class Region {
     private ArrayList<District> districts;
     private double square;
 
-    private void calculateSquare(){
-        for(District district : districts){
-            for(City city : district.getCities()){
+    private void calculateSquare() {
+        for (District district : districts) {
+            for (City city : district.getCities()) {
                 square += city.getSquare();
             }
             square += district.getSquare();
         }
     }
 
-    public Region(){
+    public Region() {
         regionCenter = new RegionCenter(this);
         districts = new ArrayList<>();
         districts.add(new District());
         calculateSquare();
     }
 
-    public Region(RegionCenter regionCenter){
+    public Region(RegionCenter regionCenter) {
         this.regionCenter = regionCenter;
         districts = new ArrayList<>();
         districts.add(new District());

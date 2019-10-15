@@ -26,7 +26,7 @@ public class Main {
 
         sentences.add(new Sentence(words));
 
-        Text text = new Text( sentences, "Счёт");
+        Text text = new Text(sentences, "Счёт");
 
         System.out.println(TextLogic.convert(text));
     }

@@ -5,7 +5,7 @@ public class BankAccount {
     private double amount;
     private boolean isBlocked;
 
-    public BankAccount(int number){
+    public BankAccount(int number) {
         this.number = number;
     }
 

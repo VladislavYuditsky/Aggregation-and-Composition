@@ -13,14 +13,14 @@ public class State {
         this.name = name;
     }
 
-    public State(){
+    public State() {
         capital = new Capital(this);
         regions = new ArrayList<>();
         regions.add(new Region(capital));
         name = "noname";
     }
 
-    public State(Capital capital){
+    public State(Capital capital) {
         this.capital = capital;
         regions = new ArrayList<>();
         regions.add(new Region(capital));

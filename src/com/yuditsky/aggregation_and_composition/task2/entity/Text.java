@@ -6,7 +6,8 @@ public class Text {
     private ArrayList<Sentence> sentences;
     private String title;
 
-    public Text(){}
+    public Text() {
+    }
 
     public Text(ArrayList<Sentence> sentences, String title) {
         this.sentences = sentences;

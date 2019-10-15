@@ -12,14 +12,14 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Voucher> vouchers = new ArrayList<>();
-       // Voucher desiredVoucher = new Voucher();
+        // Voucher desiredVoucher = new Voucher();
 
-        for(int i = 0; i < 15; i++) {
+        for (int i = 0; i < 15; i++) {
             vouchers.add(VoucherGenerator.generate());
         }
 
         System.out.println("Available vouchers:");
-        for(Voucher voucher : vouchers){
+        for (Voucher voucher : vouchers) {
             System.out.println("days: " + voucher.getDays() + ", type: " + voucher.getType() + ", transport: " +
                     voucher.getTransport() + ", feed: " + voucher.getFeed());
         }

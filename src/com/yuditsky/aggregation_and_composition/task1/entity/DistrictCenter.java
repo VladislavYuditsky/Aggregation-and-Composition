@@ -7,7 +7,7 @@ public class DistrictCenter extends City {
         district = new District(this);
     }
 
-    public DistrictCenter(District district){
+    public DistrictCenter(District district) {
         this.district = district;
     }
 

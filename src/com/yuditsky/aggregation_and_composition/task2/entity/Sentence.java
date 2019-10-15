@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Sentence {
     private ArrayList<Word> words;
 
-    public Sentence(){}
+    public Sentence() {
+    }
 
     public Sentence(ArrayList<Word> words) {
         this.words = new ArrayList<>(words);

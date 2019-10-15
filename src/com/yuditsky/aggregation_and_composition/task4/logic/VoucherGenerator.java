@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class VoucherGenerator {
 
-    public static Voucher generate(){
+    public static Voucher generate() {
         Voucher voucher = new Voucher();
         Random random = new Random();
 
