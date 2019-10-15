@@ -1,5 +1,7 @@
 package com.yuditsky.aggregation_and_composition.task4.entity;
 
+import java.util.Objects;
+
 public class Voucher {
     private Type type;
     private int days;
@@ -36,6 +38,32 @@ public class Voucher {
 
     public void setFeed(Feed feed) {
         this.feed = feed;
+    }
+
+    @Override
+    public String toString() {
+        return "Voucher{" +
+                "type=" + type +
+                ", days=" + days +
+                ", transport=" + transport +
+                ", feed=" + feed +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Voucher voucher = (Voucher) o;
+        return days == voucher.days &&
+                type == voucher.type &&
+                transport == voucher.transport &&
+                feed == voucher.feed;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, days, transport, feed);
     }
 
     public enum Type {
