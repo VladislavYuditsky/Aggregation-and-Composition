@@ -1,6 +1,9 @@
 package com.yuditsky.aggregation_and_composition.task1.entity;
 
+import com.yuditsky.aggregation_and_composition.task1.logic.CalculateSquare;
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Region {
@@ -8,33 +11,24 @@ public class Region {
     private ArrayList<District> districts;
     private double square;
 
-    private void calculateSquare() {
-        for (District district : districts) {
-            for (City city : district.getCities()) {
-                square += city.getSquare();
-            }
-            square += district.getSquare();
-        }
-    }
-
     public Region() {
         regionCenter = new RegionCenter(this);
         districts = new ArrayList<>();
         districts.add(new District());
-        calculateSquare();
+        square = CalculateSquare.calculate(this);
     }
 
     public Region(RegionCenter regionCenter) {
         this.regionCenter = regionCenter;
         districts = new ArrayList<>();
         districts.add(new District());
-        calculateSquare();
+        square = CalculateSquare.calculate(this);
     }
 
     public Region(RegionCenter regionCenter, ArrayList<District> districts) {
         this.regionCenter = regionCenter;
         this.districts = districts;
-        calculateSquare();
+        square = CalculateSquare.calculate(this);
     }
 
     @Override
@@ -69,7 +63,7 @@ public class Region {
         this.regionCenter = regionCenter;
     }
 
-    public ArrayList<District> getDistricts() {
+    public List<District> getDistricts() {
         return districts;
     }
 
