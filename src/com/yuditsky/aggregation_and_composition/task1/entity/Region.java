@@ -1,6 +1,7 @@
 package com.yuditsky.aggregation_and_composition.task1.entity;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Region {
     private RegionCenter regionCenter;
@@ -34,6 +35,30 @@ public class Region {
         this.regionCenter = regionCenter;
         this.districts = districts;
         calculateSquare();
+    }
+
+    @Override
+    public String toString() {
+        return "Region{" +
+                "regionCenter=" + regionCenter +
+                ", districts=" + districts +
+                ", square=" + square +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Region region = (Region) o;
+        return Double.compare(region.square, square) == 0 &&
+                regionCenter.equals(region.regionCenter) &&
+                districts.equals(region.districts);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(regionCenter, districts, square);
     }
 
     public RegionCenter getRegionCenter() {

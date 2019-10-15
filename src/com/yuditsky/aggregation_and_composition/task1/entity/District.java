@@ -1,6 +1,7 @@
 package com.yuditsky.aggregation_and_composition.task1.entity;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class District {
     private DistrictCenter districtCenter;
@@ -34,6 +35,30 @@ public class District {
     public District(String name) {
         this();
         districtCenter.setName(name);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        District district = (District) o;
+        return Double.compare(district.square, square) == 0 &&
+                districtCenter.equals(district.districtCenter) &&
+                cities.equals(district.cities);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(districtCenter, cities, square);
+    }
+
+    @Override
+    public String toString() {
+        return "District{" +
+                "districtCenter=" + districtCenter +
+                ", cities=" + cities +
+                ", square=" + square +
+                '}';
     }
 
     public DistrictCenter getDistrictCenter() {

@@ -1,5 +1,7 @@
 package com.yuditsky.aggregation_and_composition.task1.entity;
 
+import java.util.Objects;
+
 public class City {
     private String name;
     private double square;
@@ -11,6 +13,28 @@ public class City {
 
     public City(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "name='" + name + '\'' +
+                ", square=" + square +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        City city = (City) o;
+        return Double.compare(city.square, square) == 0 &&
+                name.equals(city.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, square);
     }
 
     public City(double square) {

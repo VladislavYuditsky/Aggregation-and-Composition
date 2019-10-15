@@ -1,6 +1,7 @@
 package com.yuditsky.aggregation_and_composition.task1.entity;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class State {
     private Capital capital;
@@ -11,6 +12,30 @@ public class State {
         this.capital = capital;
         this.regions = regions;
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "State{" +
+                "capital=" + capital +
+                ", regions=" + regions +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        State state = (State) o;
+        return capital.equals(state.capital) &&
+                regions.equals(state.regions) &&
+                name.equals(state.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(capital, regions, name);
     }
 
     public State() {
