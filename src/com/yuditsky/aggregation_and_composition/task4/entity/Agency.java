@@ -1,16 +1,17 @@
 package com.yuditsky.aggregation_and_composition.task4.entity;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Agency {
-    private ArrayList<Voucher> vouchers;
+    private List<Voucher> vouchers;
 
     public Agency(ArrayList<Voucher> vouchers) {
         this.vouchers = vouchers;
     }
 
-    public ArrayList<Voucher> getVouchers() {
+    public List<Voucher> getVouchers() {
         return vouchers;
     }
 

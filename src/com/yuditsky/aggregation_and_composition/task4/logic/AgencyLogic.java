@@ -5,6 +5,7 @@ import com.yuditsky.aggregation_and_composition.task4.entity.Voucher;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 public class AgencyLogic {
 
@@ -23,7 +24,7 @@ public class AgencyLogic {
         }
     }
 
-    public static ArrayList<Voucher> sortByDays(Agency agency){
+    public static List<Voucher> sortByDays(Agency agency){
         ArrayList<Voucher> sortedList = new ArrayList<>(agency.getVouchers());
 
         sortedList.sort(Comparator.comparing(Voucher::getDays));
@@ -43,7 +44,7 @@ public class AgencyLogic {
         return resList;
     }
 
-    public ArrayList<Voucher> listByType(Agency agency, Voucher.Type type){
+    public List<Voucher> listByType(Agency agency, Voucher.Type type){
         ArrayList<Voucher> resList = new ArrayList<>();
 
         for(Voucher voucher : agency.getVouchers()){
@@ -55,7 +56,7 @@ public class AgencyLogic {
         return resList;
     }
 
-    public ArrayList<Voucher> listByFeed(Agency agency, Voucher.Feed feed){
+    public List<Voucher> listByFeed(Agency agency, Voucher.Feed feed){
         ArrayList<Voucher> resList = new ArrayList<>();
 
         for(Voucher voucher : agency.getVouchers()){
