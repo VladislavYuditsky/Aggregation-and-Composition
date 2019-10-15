@@ -29,5 +29,10 @@ public class Main {
         Text text = new Text(sentences, "Счёт");
 
         System.out.println(TextLogic.convert(text));
+
+        TextLogic.addSentence(text, sentences.get(0));
+
+        System.out.println();
+        System.out.println(TextLogic.convert(text));
     }
 }

@@ -17,4 +17,8 @@ public class TextLogic {
 
         return resString;
     }
+
+    public static void addSentence(Text text, Sentence sentence){
+        text.getSentences().add(sentence);
+    }
 }
