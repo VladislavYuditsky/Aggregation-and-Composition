@@ -5,16 +5,16 @@ import java.util.Objects;
 public class BankAccount {
     private int number;
     private double amount;
-    private boolean isBlocked;
+    private boolean blocked;
 
     public BankAccount(int number) {
         this.number = number;
     }
 
-    public BankAccount(int number, double amount, boolean isBlocked) {
+    public BankAccount(int number, double amount, boolean blocked) {
         this.number = number;
         this.amount = amount;
-        this.isBlocked = isBlocked;
+        this.blocked = blocked;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class BankAccount {
         return "BankAccount{" +
                 "number=" + number +
                 ", amount=" + amount +
-                ", isBlocked=" + isBlocked +
+                ", blocked=" + blocked +
                 '}';
     }
 
@@ -33,12 +33,12 @@ public class BankAccount {
         BankAccount account = (BankAccount) o;
         return number == account.number &&
                 Double.compare(account.amount, amount) == 0 &&
-                isBlocked == account.isBlocked;
+                blocked == account.blocked;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, amount, isBlocked);
+        return Objects.hash(number, amount, blocked);
     }
 
     public int getNumber() {
@@ -58,10 +58,10 @@ public class BankAccount {
     }
 
     public boolean isBlocked() {
-        return isBlocked;
+        return blocked;
     }
 
     public void setBlocked(boolean blocked) {
-        isBlocked = blocked;
+        this.blocked = blocked;
     }
 }
