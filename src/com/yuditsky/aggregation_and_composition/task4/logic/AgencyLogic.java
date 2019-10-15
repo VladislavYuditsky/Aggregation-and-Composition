@@ -36,7 +36,7 @@ public class AgencyLogic {
         ArrayList<Voucher> resList = new ArrayList<>();
 
         for(Voucher voucher : agency.getVouchers()){
-            if(voucher.getTransport() == transport){
+            if(voucher.getTransport().equals(transport)){
                 resList.add(voucher);
             }
         }
@@ -48,7 +48,7 @@ public class AgencyLogic {
         ArrayList<Voucher> resList = new ArrayList<>();
 
         for(Voucher voucher : agency.getVouchers()){
-            if(voucher.getType() == type){
+            if(voucher.getType().equals(type)){
                 resList.add(voucher);
             }
         }
@@ -60,7 +60,7 @@ public class AgencyLogic {
         ArrayList<Voucher> resList = new ArrayList<>();
 
         for(Voucher voucher : agency.getVouchers()){
-            if(voucher.getFeed() == feed){
+            if(voucher.getFeed().equals(feed)){
                 resList.add(voucher);
             }
         }
