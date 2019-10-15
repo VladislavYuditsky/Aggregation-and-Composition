@@ -71,14 +71,14 @@ public class Voucher {
         EXCURSION,
         TREATMENT,
         SHOPPING,
-        CRUISE;
+        CRUISE
     }
 
     public enum Transport {
         AIRPLANE,
         SHIP,
         TRAIN,
-        BUS;
+        BUS
     }
 
     public enum Feed {
@@ -87,7 +87,7 @@ public class Voucher {
         HB,
         FB,
         AI,
-        UAI;
+        UAI
     }
 
     public Voucher() {
