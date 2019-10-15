@@ -1,4 +1,4 @@
-package com.yuditsky.aggregation_and_composition.task4.logic;
+package com.yuditsky.aggregation_and_composition.task4;
 
 import com.yuditsky.aggregation_and_composition.task4.entity.Voucher;
 

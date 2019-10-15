@@ -7,7 +7,6 @@ package com.yuditsky.aggregation_and_composition.task4;
 import com.yuditsky.aggregation_and_composition.task4.entity.Agency;
 import com.yuditsky.aggregation_and_composition.task4.entity.Voucher;
 import com.yuditsky.aggregation_and_composition.task4.logic.AgencyLogic;
-import com.yuditsky.aggregation_and_composition.task4.logic.VoucherGenerator;
 
 import java.util.ArrayList;
 
