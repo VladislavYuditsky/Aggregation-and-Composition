@@ -16,13 +16,13 @@ public class Main {
         ArrayList<Sentence> sentences = new ArrayList<>();
 
         words.add(new Word("Раз"));
-        words.add(new Word("Два"));
-        words.add(new Word("Три"));
+        words.add(new Word("два"));
+        words.add(new Word("три"));
 
         sentences.add(new Sentence(words));
 
-        words.add(new Word("Четыре"));
-        words.add(new Word("Пять"));
+        words.add(new Word("четыре"));
+        words.add(new Word("пять"));
 
         sentences.add(new Sentence(words));
 
