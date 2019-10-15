@@ -1,16 +1,17 @@
 package com.yuditsky.aggregation_and_composition.task3.entity;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Client {
-    private ArrayList<BankAccount> bankAccounts;
+    private List<BankAccount> bankAccounts;
 
     public Client(ArrayList<BankAccount> bankAccounts) {
         this.bankAccounts = bankAccounts;
     }
 
-    public ArrayList<BankAccount> getBankAccounts() {
+    public List<BankAccount> getBankAccounts() {
         return bankAccounts;
     }
 
