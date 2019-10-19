@@ -11,7 +11,7 @@ public class Sentence {
     }
 
     public Sentence(ArrayList<Word> words) {
-        this.words = new ArrayList<>(words);
+        this.words = words;
     }
 
     public List<Word> getWords() {

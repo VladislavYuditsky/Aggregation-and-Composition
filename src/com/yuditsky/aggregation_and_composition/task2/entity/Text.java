@@ -11,6 +11,27 @@ public class Text {
     public Text() {
     }
 
+    public Text(ArrayList<Sentence> sentences, String title) {
+        this.sentences = sentences;
+        this.title = title;
+    }
+
+    public List<Sentence> getSentences() {
+        return sentences;
+    }
+
+    public void setSentences(ArrayList<Sentence> sentences) {
+        this.sentences = sentences;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     @Override
     public String toString() {
         return "Text{" +
@@ -31,26 +52,5 @@ public class Text {
     @Override
     public int hashCode() {
         return Objects.hash(sentences, title);
-    }
-
-    public Text(ArrayList<Sentence> sentences, String title) {
-        this.sentences = sentences;
-        this.title = title;
-    }
-
-    public List<Sentence> getSentences() {
-        return sentences;
-    }
-
-    public void setSentences(ArrayList<Sentence> sentences) {
-        this.sentences = sentences;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 }

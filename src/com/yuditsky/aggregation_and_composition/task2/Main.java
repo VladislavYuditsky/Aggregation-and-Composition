@@ -18,12 +18,11 @@ public class Main {
         words.add(new Word("Раз"));
         words.add(new Word("два"));
         words.add(new Word("три"));
-
         sentences.add(new Sentence(words));
 
-        words.add(new Word("четыре"));
+        words = new ArrayList<>();
+        words.add(new Word("Четыре"));
         words.add(new Word("пять"));
-
         sentences.add(new Sentence(words));
 
         Text text = new Text(sentences, "Счёт");
