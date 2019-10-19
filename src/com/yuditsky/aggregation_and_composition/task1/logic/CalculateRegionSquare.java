@@ -4,7 +4,7 @@ import com.yuditsky.aggregation_and_composition.task1.entity.City;
 import com.yuditsky.aggregation_and_composition.task1.entity.District;
 import com.yuditsky.aggregation_and_composition.task1.entity.Region;
 
-public class CalculateSquare {
+public class CalculateRegionSquare {
     public static double calculate(Region region) {
         int square = 0;
 

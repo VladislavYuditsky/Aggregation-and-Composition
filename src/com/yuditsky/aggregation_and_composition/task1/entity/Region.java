@@ -1,34 +1,63 @@
 package com.yuditsky.aggregation_and_composition.task1.entity;
 
-import com.yuditsky.aggregation_and_composition.task1.logic.CalculateSquare;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Region {
-    private RegionCenter regionCenter;
+    private City regionCenter;
     private ArrayList<District> districts;
     private double square;
 
     public Region() {
-        regionCenter = new RegionCenter(this);
+        regionCenter = new City();
         districts = new ArrayList<>();
         districts.add(new District());
-        square = CalculateSquare.calculate(this);
     }
 
-    public Region(RegionCenter regionCenter) {
+    public Region(City regionCenter) {
         this.regionCenter = regionCenter;
         districts = new ArrayList<>();
         districts.add(new District());
-        square = CalculateSquare.calculate(this);
     }
 
-    public Region(RegionCenter regionCenter, ArrayList<District> districts) {
+    public Region(City regionCenter, ArrayList<District> districts) {
         this.regionCenter = regionCenter;
         this.districts = districts;
-        square = CalculateSquare.calculate(this);
+    }
+
+    public Region(String name) {
+        this();
+        regionCenter.setName(name);
+    }
+
+    public Region(String name, double square) {
+        this(name);
+        this.square = square;
+    }
+
+    public City getRegionCenter() {
+        return regionCenter;
+    }
+
+    public void setRegionCenter(City regionCenter) {
+        this.regionCenter = regionCenter;
+    }
+
+    public List<District> getDistricts() {
+        return districts;
+    }
+
+    public void setDistricts(ArrayList<District> districts) {
+        this.districts = districts;
+    }
+
+    public double getSquare() {
+        return square;
+    }
+
+    public void setSquare(double square) {
+        this.square = square;
     }
 
     @Override
@@ -53,25 +82,5 @@ public class Region {
     @Override
     public int hashCode() {
         return Objects.hash(regionCenter, districts, square);
-    }
-
-    public RegionCenter getRegionCenter() {
-        return regionCenter;
-    }
-
-    public void setRegionCenter(RegionCenter regionCenter) {
-        this.regionCenter = regionCenter;
-    }
-
-    public List<District> getDistricts() {
-        return districts;
-    }
-
-    public void setDistricts(ArrayList<District> districts) {
-        this.districts = districts;
-    }
-
-    public double getSquare() {
-        return square;
     }
 }

@@ -1,40 +1,64 @@
 package com.yuditsky.aggregation_and_composition.task1.entity;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class District {
-    private DistrictCenter districtCenter;
+    private City districtCenter;
     private ArrayList<City> cities;
     private double square;
 
-    public District(DistrictCenter districtCenter) {
+    public District() {
+        districtCenter = new City();
+        cities = new ArrayList<>();
+        cities.add(districtCenter);
+    }
+
+    public District(City districtCenter) {
         this.districtCenter = districtCenter;
         cities = new ArrayList<>();
         cities.add(districtCenter);
     }
 
-    public District() {
-        districtCenter = new DistrictCenter(this);
-        cities = new ArrayList<>();
-        cities.add(districtCenter);
-    }
-
-    public District(DistrictCenter districtCenter, ArrayList<City> cities, double square) {
+    public District(City districtCenter, ArrayList<City> cities, double square) {
         this.districtCenter = districtCenter;
         this.cities = cities;
-        this.square = square;
-    }
-
-    public District(String name, double square) {
-        this();
-        districtCenter.setName(name);
         this.square = square;
     }
 
     public District(String name) {
         this();
         districtCenter.setName(name);
+    }
+
+    public District(String name, double square) {
+        this(name);
+        this.square = square;
+    }
+
+    public City getDistrictCenter() {
+        return districtCenter;
+    }
+
+    public void setDistrictCenter(City districtCenter) {
+        this.districtCenter = districtCenter;
+    }
+
+    public List<City> getCities() {
+        return cities;
+    }
+
+    public void setCities(ArrayList<City> cities) {
+        this.cities = cities;
+    }
+
+    public double getSquare() {
+        return square;
+    }
+
+    public void setSquare(double square) {
+        this.square = square;
     }
 
     @Override
@@ -59,30 +83,5 @@ public class District {
                 ", cities=" + cities +
                 ", square=" + square +
                 '}';
-    }
-
-    public DistrictCenter getDistrictCenter() {
-        return districtCenter;
-    }
-
-    public void setDistrictCenter(DistrictCenter districtCenter) {
-        this.districtCenter = districtCenter;
-    }
-
-    public ArrayList<City> getCities() {
-        return cities;
-    }
-
-    public void setCities(ArrayList<City> cities) {
-        this.cities = cities;
-    }
-
-
-    public double getSquare() {
-        return square;
-    }
-
-    public void setSquare(double square) {
-        this.square = square;
     }
 }
