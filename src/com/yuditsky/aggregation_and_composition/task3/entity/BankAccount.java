@@ -7,6 +7,9 @@ public class BankAccount {
     private double amount;
     private boolean blocked;
 
+    public BankAccount() {
+    }
+
     public BankAccount(int number) {
         this.number = number;
     }
@@ -14,6 +17,30 @@ public class BankAccount {
     public BankAccount(int number, double amount, boolean blocked) {
         this.number = number;
         this.amount = amount;
+        this.blocked = blocked;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public boolean isBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(boolean blocked) {
         this.blocked = blocked;
     }
 
@@ -39,29 +66,5 @@ public class BankAccount {
     @Override
     public int hashCode() {
         return Objects.hash(number, amount, blocked);
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public boolean isBlocked() {
-        return blocked;
-    }
-
-    public void setBlocked(boolean blocked) {
-        this.blocked = blocked;
     }
 }

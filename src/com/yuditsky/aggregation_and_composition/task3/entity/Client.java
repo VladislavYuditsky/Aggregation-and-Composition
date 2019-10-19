@@ -7,6 +7,9 @@ import java.util.Objects;
 public class Client {
     private List<BankAccount> bankAccounts;
 
+    public Client() {
+    }
+
     public Client(ArrayList<BankAccount> bankAccounts) {
         this.bankAccounts = bankAccounts;
     }

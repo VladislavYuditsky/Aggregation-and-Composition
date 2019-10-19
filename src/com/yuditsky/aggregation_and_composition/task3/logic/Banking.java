@@ -8,7 +8,7 @@ import java.util.Comparator;
 
 public class Banking {
 
-    public BankAccount findBankAccount(Client client, int number) {
+    public static BankAccount findBankAccount(Client client, int number) {
         for (BankAccount account : client.getBankAccounts()) {
             if (account.getNumber() == number) {
                 if (!account.isBlocked()) {
@@ -19,13 +19,13 @@ public class Banking {
         return null;
     }
 
-    public ArrayList<BankAccount> sortByNumber(Client client) {
+    public static ArrayList<BankAccount> sortByNumber(Client client) {
         ArrayList<BankAccount> sortedAccounts = new ArrayList<>(client.getBankAccounts());
         sortedAccounts.sort(Comparator.comparing(BankAccount::getNumber));
         return sortedAccounts;
     }
 
-    public double totalAmount(Client client) {
+    public static double totalAmount(Client client) {
         double totalAmount = 0;
 
         for (BankAccount account : client.getBankAccounts()) {
@@ -37,7 +37,7 @@ public class Banking {
         return totalAmount;
     }
 
-    public double positiveAmount(Client client) {
+    public static double positiveAmount(Client client) {
         double positiveAmount = 0;
 
         for (BankAccount account : client.getBankAccounts()) {
@@ -49,11 +49,11 @@ public class Banking {
         return positiveAmount;
     }
 
-    public double negativeAmount(Client client) {
+    public static double negativeAmount(Client client) {
         double positiveAmount = 0;
 
         for (BankAccount account : client.getBankAccounts()) {
-            if (!account.isBlocked() && account.getAmount() > 0) {
+            if (!account.isBlocked() && account.getAmount() < 0) {
                 positiveAmount += account.getAmount();
             }
         }
