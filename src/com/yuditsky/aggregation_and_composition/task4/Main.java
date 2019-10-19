@@ -28,20 +28,20 @@ public class Main {
 
         Voucher desiredVoucher;
         desiredVoucher = VoucherGenerator.generate();
-        System.out.println("desired voucher: " + " days: " + desiredVoucher.getDays() + ", type: "
+        System.out.println("\nDesired voucher: " + " days: " + desiredVoucher.getDays() + ", type: "
                 + desiredVoucher.getType() + ", transport: " + desiredVoucher.getTransport()
                 + ", feed: " + desiredVoucher.getFeed());
 
-        System.out.println("Is avaible: " + AgencyLogic.isAvailable(agency, desiredVoucher));
+        System.out.println("Booking: " + AgencyLogic.toBook(agency, desiredVoucher));
 
-        System.out.println("Sort by days");
-        for(Voucher voucher : AgencyLogic.sortByDays(agency)) {
+        System.out.println("\nSort by days");
+        for (Voucher voucher : AgencyLogic.sortByDays(agency)) {
             System.out.println("days: " + voucher.getDays() + ", type: " + voucher.getType() + ", transport: " +
                     voucher.getTransport() + ", feed: " + voucher.getFeed());
         }
 
-        System.out.println("List by transport: Train");
-        for(Voucher voucher : AgencyLogic.listByTransport(agency, Voucher.Transport.TRAIN)) {
+        System.out.println("\nList by transport: Train");
+        for (Voucher voucher : AgencyLogic.listByTransport(agency, Voucher.Transport.TRAIN)) {
             System.out.println("days: " + voucher.getDays() + ", type: " + voucher.getType() + ", transport: " +
                     voucher.getTransport() + ", feed: " + voucher.getFeed());
         }

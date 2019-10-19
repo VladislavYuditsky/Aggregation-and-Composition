@@ -9,22 +9,24 @@ import java.util.List;
 
 public class AgencyLogic {
 
-    public static boolean isAvailable(Agency agency, Voucher desiredVoucher){
-        for(Voucher voucher : agency.getVouchers()){
-            if(voucher == desiredVoucher){
+    public static boolean isAvailable(Agency agency, Voucher desiredVoucher) {
+        for (Voucher voucher : agency.getVouchers()) {
+            if (voucher == desiredVoucher) {
                 return true;
             }
         }
         return false;
     }
 
-    public void toBook(Agency agency, Voucher desiredVoucher){
-        if(isAvailable(agency, desiredVoucher)){
+    public static boolean toBook(Agency agency, Voucher desiredVoucher) {
+        if (isAvailable(agency, desiredVoucher)) {
             agency.getVouchers().remove(desiredVoucher);
+            return true;
         }
+        return false;
     }
 
-    public static List<Voucher> sortByDays(Agency agency){
+    public static List<Voucher> sortByDays(Agency agency) {
         ArrayList<Voucher> sortedList = new ArrayList<>(agency.getVouchers());
 
         sortedList.sort(Comparator.comparing(Voucher::getDays));
@@ -32,11 +34,11 @@ public class AgencyLogic {
         return sortedList;
     }
 
-    public static ArrayList<Voucher> listByTransport(Agency agency, Voucher.Transport transport){
+    public static ArrayList<Voucher> listByTransport(Agency agency, Voucher.Transport transport) {
         ArrayList<Voucher> resList = new ArrayList<>();
 
-        for(Voucher voucher : agency.getVouchers()){
-            if(voucher.getTransport().equals(transport)){
+        for (Voucher voucher : agency.getVouchers()) {
+            if (voucher.getTransport().equals(transport)) {
                 resList.add(voucher);
             }
         }
@@ -44,11 +46,11 @@ public class AgencyLogic {
         return resList;
     }
 
-    public List<Voucher> listByType(Agency agency, Voucher.Type type){
+    public List<Voucher> listByType(Agency agency, Voucher.Type type) {
         ArrayList<Voucher> resList = new ArrayList<>();
 
-        for(Voucher voucher : agency.getVouchers()){
-            if(voucher.getType().equals(type)){
+        for (Voucher voucher : agency.getVouchers()) {
+            if (voucher.getType().equals(type)) {
                 resList.add(voucher);
             }
         }
@@ -56,11 +58,11 @@ public class AgencyLogic {
         return resList;
     }
 
-    public List<Voucher> listByFeed(Agency agency, Voucher.Feed feed){
+    public List<Voucher> listByFeed(Agency agency, Voucher.Feed feed) {
         ArrayList<Voucher> resList = new ArrayList<>();
 
-        for(Voucher voucher : agency.getVouchers()){
-            if(voucher.getFeed().equals(feed)){
+        for (Voucher voucher : agency.getVouchers()) {
+            if (voucher.getFeed().equals(feed)) {
                 resList.add(voucher);
             }
         }

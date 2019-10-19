@@ -8,6 +8,40 @@ public class Voucher {
     private Transport transport;
     private Feed feed;
 
+    public enum Type {
+        REST,
+        EXCURSION,
+        TREATMENT,
+        SHOPPING,
+        CRUISE
+    }
+
+    public enum Transport {
+        AIRPLANE,
+        SHIP,
+        TRAIN,
+        BUS
+    }
+
+    public enum Feed {
+        RO,
+        BB,
+        HB,
+        FB,
+        AI,
+        UAI
+    }
+
+    public Voucher() {
+    }
+
+    public Voucher(Type type, int days, Transport transport, Feed feed) {
+        this.type = type;
+        this.days = days;
+        this.transport = transport;
+        this.feed = feed;
+    }
+
     public Type getType() {
         return type;
     }
@@ -64,39 +98,5 @@ public class Voucher {
     @Override
     public int hashCode() {
         return Objects.hash(type, days, transport, feed);
-    }
-
-    public enum Type {
-        REST,
-        EXCURSION,
-        TREATMENT,
-        SHOPPING,
-        CRUISE
-    }
-
-    public enum Transport {
-        AIRPLANE,
-        SHIP,
-        TRAIN,
-        BUS
-    }
-
-    public enum Feed {
-        RO,
-        BB,
-        HB,
-        FB,
-        AI,
-        UAI
-    }
-
-    public Voucher() {
-    }
-
-    public Voucher(Type type, int days, Transport transport, Feed feed) {
-        this.type = type;
-        this.days = days;
-        this.transport = transport;
-        this.feed = feed;
     }
 }
